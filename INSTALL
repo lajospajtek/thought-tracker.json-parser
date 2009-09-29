@@ -1,0 +1,88 @@
+###############################
+#
+# PREREQUISITES
+#
+# If you obtained the code from SVN (as opposed to a tar.gz ball), the following packages
+# are required for compilation:
+#
+# autoconf
+# automake
+# libtool
+#
+# Packages required for compilation of the usage example:
+#
+# gcc >= 4.0
+# g++ >= 4.0
+# libstdc++6-version-dev, where version >= 4.0
+#
+# Additionally, the following packages are required in order to compile the unit tests:
+#
+# libcppunit-dev
+#
+# Packages required at runtime:
+# 
+# libc6
+# libstdc++6
+#
+# Additionally, the following packages are required in order to run the unit tests:
+#
+# libcppunit-version, where version >= 1.0
+#
+# Additionally, the following package is required in order to run the code coverage campaign:
+#
+# lcov
+#
+################################
+
+################################
+#
+# IMPORTANT:
+#
+# If you got the files from SVN then you need to run the following command before being
+# able to proceed with the next steps:
+#
+# cd /path/to/root/of/package
+# make -f Makefile.cvs
+#
+################################
+
+################################
+#
+# A. Configuration of the compilation
+#
+################################
+
+src_dir=/absolute/path/to/root/of/package
+build_dir=/absolute/path/to/build/dir
+mkdir -p "$build_dir"
+cd "$build_dir"
+"$src_dir"/configure [--enable-debug]
+
+#################################
+#
+# B. Compilation
+#
+#################################
+
+# go through step A first. Next
+make
+
+#################################
+#
+# C. Running the unit tests
+#
+################################
+
+# go through step A first. Next
+make check
+
+#################################
+#
+# D. Running the code coverage campaign
+#
+#################################
+
+# go through step A first. Next
+make coverage-campaign
+
+# The results of the coverage campaign are found in "$src_dir"/metrics/coverage

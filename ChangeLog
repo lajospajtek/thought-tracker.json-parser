@@ -1,0 +1,5 @@
+0.901
+* Fixed the handling of \udddd in the scanner, where d is a hex digit.
+
+0.9
+* Initial release.
